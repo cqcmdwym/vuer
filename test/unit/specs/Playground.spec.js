@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import Playground from '@/components/Playground'
 import { mount } from 'vue-test-utils'
 
@@ -32,5 +33,19 @@ describe('Playground.vue', () => {
 
     const el = cmp.find('.Playground__button').trigger('click')
     expect(cmp.vm.saveContent).toBeCalled()
+  })
+
+  it('calls store commit when click save button', () => {
+    Vue.use(Vuex)
+    const store = new Vuex.Store({state:'fake-state'})
+    const Constructor = Vue.extend(Playground)
+    const vm = new Constructor({store}).$mount()
+    spyOn(store, 'commit')
+
+    const button = vm.$el.querySelector('button');
+    const clickEvent = new window.Event('click');
+    button.dispatchEvent(clickEvent);
+
+    expect(store.commit).toBeCalled()
   })
 })
