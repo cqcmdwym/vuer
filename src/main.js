@@ -3,12 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/'
+// eslint-disable-next-line
+import bootstrap from '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

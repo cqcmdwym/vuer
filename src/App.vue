@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <demo-header></demo-header>
     <router-view/>
   </div>
 </template>
 
 <script>
+import DemoHeader from './components/Header.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    DemoHeader
+  }
 }
 </script>
 
@@ -18,6 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  border: 1px dotted;
+  margin: 20px;
 }
 </style>
