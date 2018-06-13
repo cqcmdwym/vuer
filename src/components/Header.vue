@@ -1,5 +1,5 @@
 <template>
-  <header class="header clearfix">
+  <header class="Header clearfix">
       <nav>
         <ul class="nav nav-pills pull-right">
           <li role="presentation">
@@ -9,7 +9,7 @@
             <router-link to="/state">State</router-link>
           </li>
       </ul>
-      <h3 class="text-muted">A mini demo</h3>
+      <h3 class="text-muted Header__title">A mini demo</h3>
       </nav>
     </header>
 </template>
@@ -21,17 +21,18 @@ export default {
 </script>
 
 <style scoped>
-.nav-tabs > li {
-  margin-bottom: 0;
-}
-.header {
+.Header {
   padding: 15px 15px 20px 15px;
   border-bottom: 1px solid #e5e5e5;
 }
 
-.header h3 {
+.Header__title {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
+}
+
+.Header .router-link-exact-active {
+  background: gainsboro;
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
-  <div>{{this.$store.state | json}}</div>
+  <pre class="StateOutput">{{$store.state}}</pre>
 </template>
 
 <script>
-
 export default {
   name: 'State'
 }
